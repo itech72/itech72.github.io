@@ -78,7 +78,7 @@ button[disabled]:active {
 #historyList li .history-item:first-of-type {
   display: inline-block;
   margin-right: 10px;
-  width: 30%;
+  width: 25%;
   text-align: right;
 }
 
