@@ -70,7 +70,7 @@ button[disabled]:active {
 .history-item {
   display: inline-block;
   margin-right: 10px;
-  width: 50%;
+  width: 35%;
   height: 5vh;
   text-align: right;
 }
