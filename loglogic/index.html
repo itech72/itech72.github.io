@@ -20,8 +20,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="manifest" href="./manifest.webmanifest" />
   </head>
   <body id="calculator">
     <!-- History -->
@@ -32,25 +30,24 @@
     <input id="display" type="text" placeholder="0" value="0" readonly />
     <!-- keypad -->
     <div id="keypad" class="disable-dbl-tap-zoom">
-      <button onclick="display('7')">7</button>
-      <button onclick="display('8')">8</button>
-      <button onclick="display('9')">9</button>
-      <button onclick="resetEntry()" class="Special">CA</button>
+      <button ontouchend="display('7')">7</button>
+      <button ontouchend="display('8')">8</button>
+      <button ontouchend="display('9')">9</button>
+      <button ontouchend="resetEntry()" class="Special">CA</button>
 
-      <button onclick="display('4')">4</button>
-      <button onclick="display('5')">5</button>
-      <button onclick="display('6')">6</button>
-      <!-- <button onclick="reset()" id="Clear" class="Special">C</button> -->
-      <button onclick="removeCharacter()" class="Special rpad">
+      <button ontouchend="display('4')">4</button>
+      <button ontouchend="display('5')">5</button>
+      <button ontouchend="display('6')">6</button>
+      <button ontouchend="removeCharacter()" class="Special rpad">
         <i class="fas fa-backspace"></i>
       </button>
       
-      <button onclick="display('1')">1</button>
-      <button onclick="display('2')">2</button>
-      <button onclick="display('3')">3</button>
-      <button onclick="formatNumber()" id="equal">=</button>
+      <button ontouchend="display('1')">1</button>
+      <button ontouchend="display('2')">2</button>
+      <button ontouchend="display('3')">3</button>
+      <button ontouchend="formatNumber()" class="equal">=</button>
       <button disabled></button>
-      <button onclick="display('0')">0</button>
+      <button ontouchend="display('0')">0</button>
       <button disabled></button>
     </div>
   </body>
