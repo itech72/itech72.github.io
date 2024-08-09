@@ -8,6 +8,29 @@ let totalVolume = 0;
 let Display = document.getElementById("display");
 let history = document.getElementById("history");
 
+const buttons = document.querySelectorAll("#keypad button");
+
+function triggerVibration() {
+  if (navigator.vibrate) {
+    navigator.vibrate(50); // Vibrate for 50ms
+  }
+}
+
+buttons.forEach((button) => {
+  button.addEventListener("touchstart", function () {
+    button.classList.add("touch-active");
+    triggerVibration();
+  });
+
+  button.addEventListener("touchend", function () {
+    button.classList.remove("touch-active");
+  });
+
+  button.addEventListener("touchcancel", function () {
+    button.classList.remove("touch-active");
+  });
+});
+
 Display.addEventListener("input", (e) => {
   validateState();
   scrollDisplayToRight();
@@ -165,19 +188,4 @@ function updateTotal(totalPieces, totalVolume) {
 
   totalPieceElement.textContent = totalPieces + " pcs";
   totalVolumeElement.textContent = totalVolume.toFixed(3) + " cft";
-}
-
-if (navigator.serviceWorker) {
-  // Start registration process on every page load
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      // The register function takes as argument
-      // the file path to the worker's file
-      .register("./sw.js")
-      // Gives us registration object
-      .then((reg) => console.log("Service Worker Registered"))
-      .catch((swErr) =>
-        console.log(`Service Worker Installation Error: ${swErr}}`)
-      );
-  });
 }
