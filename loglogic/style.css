@@ -42,15 +42,14 @@ button {
   color: white;
 }
 
-button:active {
-  background: rgba(255, 255, 255, 0.3);
+.touch-active {
+  background: rgba(255, 255, 255, 0.3); /* Lightens the button during touch */
 }
 
 /* Optionally style hover effect */
 button[disabled]:active {
   background: transparent;
 }
-
 
 #history {
   height: 36vh;
@@ -82,10 +81,10 @@ button[disabled]:active {
   text-align: right;
 }
 
-.delete { 
+.delete {
   margin-left: 20px;
   margin-top: 0px !important;
-  width: 4%;
+  width: 5%;
   text-align: center;
   font-size: 90%;
   color: coral;
@@ -152,13 +151,13 @@ button[disabled]:active {
   grid-template-columns: repeat(4, 1fr);
 }
 
-#equal {
+.equal {
   grid-row: span 2;
   grid-column: span 1;
 }
 
-#equal,
-#clear {
+.equal,
+.clear {
   color: rgb(1, 133, 116);
 }
 
