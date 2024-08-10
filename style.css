@@ -42,15 +42,14 @@ button {
   color: white;
 }
 
-button:active {
-  background: rgba(255, 255, 255, 0.3);
+.touch-active {
+  background: rgba(255, 255, 255, 0.3); /* Lightens the button during touch */
 }
 
 /* Optionally style hover effect */
 button[disabled]:active {
   background: transparent;
 }
-
 
 #history {
   height: 36vh;
@@ -70,7 +69,7 @@ button[disabled]:active {
 .history-item {
   display: inline-block;
   margin-right: 10px;
-  width: 50%;
+  width: 35%;
   height: 5vh;
   text-align: right;
 }
@@ -78,11 +77,11 @@ button[disabled]:active {
 #historyList li .history-item:first-of-type {
   display: inline-block;
   margin-right: 10px;
-  width: 30%;
+  width: 25%;
   text-align: right;
 }
 
-.delete { 
+.delete {
   margin-left: 20px;
   margin-top: 0px !important;
   width: 5%;
@@ -145,6 +144,24 @@ button[disabled]:active {
   appearance: none;
 }
 
+#display2 {
+  background-color: #444;
+  height: 48vh;
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 12vmin;
+  padding: 15px;
+  caret-color: #09ddc1;
+  color: whitesmoke;
+}
+
+#display2::-webkit-inner-spin-button,
+#display2::-webkit-inner-spin-button {
+  appearance: none;
+}
+
 #keypad {
   height: 47vh;
   background-color: #333;
@@ -152,13 +169,20 @@ button[disabled]:active {
   grid-template-columns: repeat(4, 1fr);
 }
 
-#equal {
+#keypad2 {
+  height: 47vh;
+  background-color: #333;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.equal {
   grid-row: span 2;
   grid-column: span 1;
 }
 
-#equal,
-#clear {
+.equal,
+.clear {
   color: rgb(1, 133, 116);
 }
 
@@ -168,6 +192,14 @@ button[disabled]:active {
 
 .Special:active {
   background-color: rgb(92, 199, 185, 0.8);
+}
+
+.Special2 {
+  background-color: #e86955;
+}
+
+.Special2:active {
+  background-color: #f49283;
 }
 
 .rpad {
@@ -182,4 +214,52 @@ button[disabled]:active {
   .github-logo {
     display: none !important;
   }
+}
+
+/* Container styles */
+#container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Mode styles */
+#mode1,
+#mode2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* .hidden {
+  transform: translateX(100%);
+}
+
+.active {
+  transform: translateX(0);
+} */
+
+.slide-left {
+  transform: translateX(-100%);
+}
+
+.slide-middle {
+  transform: translateX(0%);
+}
+
+.slide-right {
+  transform: translateX(100%);
+}
+
+/* Initial setup for modes */
+#mode1.active {
+  transform: translateX(0);
+}
+
+#mode2.hidden {
+  transform: translateX(100%);
 }
