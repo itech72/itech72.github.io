@@ -1,10 +1,10 @@
 {
-    "name": "LogLogic",
-    "short_name": "LogLogic",
+    "name": "LogLogicBeta",
+    "short_name": "LogLogicBeta",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#fff",
-    "description": "LogLogic Wood Calculator App.",
+    "description": "LogLogic Wood Calculator App Beta Version.",
     "icons": [
       {
         "src": "./icons/icon-512.png",
